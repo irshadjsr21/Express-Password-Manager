@@ -1,0 +1,34 @@
+{
+  "name": "passwords",
+  "version": "1.0.0",
+  "description": "Manage your passwords safely",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waqardm/passwordManager.git"
+  },
+  "author": "Waqar Mohammad (@lawyerscode)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waqardm/passwordManager/issues"
+  },
+  "homepage": "https://github.com/waqardm/passwordManager#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-flash-messages": "^0.1.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "inline-edit-js": "^1.1.1",
+    "mongoose": "^5.2.2",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.18.7"
+  }
+}
