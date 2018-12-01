@@ -123,7 +123,18 @@ app.post('/password/update/:id', function (req, res) {
         if (err) throw err;
         res.redirect('/dashboard');
     });
-});	
+});
+
+app.get('/password/delete/:id', function (req,res){
+    let id = req.params.id;
+    let sql = `DELETE FROM passwords WHERE id= '${ id }'`;
+    
+    let query = db.query(sql, (err, result)=>{
+        if(err) throw err;
+        res.redirect('/dashboard');
+    });
+
+});
 
 app.listen('3000'), () => {
     console.log('server started on port 8080');
