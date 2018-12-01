@@ -96,6 +96,7 @@ app.post('/password/add', function(req, res) {
 app.get('/password/update/:id', function (req, res) {
     let id = req.params.id;
     let sql = `SELECT * FROM passwords WHERE id = '${id}'`;
+
     let query = db.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result);
@@ -103,18 +104,24 @@ app.get('/password/update/:id', function (req, res) {
             title: 'Update Password',
             site: result[0].site,
             username: result[0].username,
-            password: result[0].password
+            password: result[0].password,
+            id: id
         });
     });
 
 
 });
-app.put('/password/update/:id', function (req, res) {
+app.post('/password/update/:id', function (req, res) {
     let id = req.params.id;
-    let sql = `UPDATE password SET ? WHERE id = '${id}'`;
-    let query = db.query(sql, (err, result) => {
+    let password = {
+        site: req.body.site,
+        username: req.body.username,
+        password: req.body.password
+    }
+    let sql = `UPDATE passwords SET ? WHERE id = '${id}'`;
+    let query = db.query(sql, password, (err, result) => {
         if (err) throw err;
-        res.redirect(200, '/dashboard');
+        res.redirect('/dashboard');
     });
 });	
 
