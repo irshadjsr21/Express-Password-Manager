@@ -61,6 +61,7 @@ app.get('/', function (req, res) {
 
 
 // dashboard
+
 app.get('/dashboard', function (req, res) {
     let sql = 'SELECT * FROM passwords';
     let query = db.query(sql, (err, result) => {
@@ -71,6 +72,9 @@ app.get('/dashboard', function (req, res) {
         });
     });
 });
+
+
+// add password 
 
 app.get('/password/add', function (req, res) {
     res.render('add-password', {
@@ -93,6 +97,7 @@ app.post('/password/add', function(req, res) {
 });
 
 //edit password	
+
 app.get('/password/update/:id', function (req, res) {
     let id = req.params.id;
     let sql = `SELECT * FROM passwords WHERE id = '${id}'`;
@@ -124,6 +129,9 @@ app.post('/password/update/:id', function (req, res) {
         res.redirect('/dashboard');
     });
 });
+
+
+// delete
 
 app.get('/password/delete/:id', function (req,res){
     let id = req.params.id;

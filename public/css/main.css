@@ -32,6 +32,14 @@ h2 {
     display: block;
 }
 
+.hidden {
+    display: none
+}
+
+.content {
+    content: 'xxxxxx';
+}
+
 .footer {
     bottom: 0;
     width: 100%;

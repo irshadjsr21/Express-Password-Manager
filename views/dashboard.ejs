@@ -66,14 +66,14 @@
                                 <td> 
                                     <div class="row-data" id='<%= id %> username' ><%= result[i].username %> </div>
                                 </td>
-                                <td>
-                                    <div class="row-data" id='<%= id %>' > <%= result[i].password %> </div>
+                                <td class="">
+                                    <div class="row-data" id='<%= id %>'> <span class="hidden"><%= result[i].password %></span>password hidden</div>
                                 </td>
                                 <td>
                                 
                                         <a href="/password/update/<%=id%>"><i class="far fa-edit fa-lg icon-margin icon-blue editPassword"></i></a>
                                     
-                                    <a href="/password/delete/<%=id%>"><i class="deletePassword far fa-trash-alt fa-lg icon-red " data-id="<%= id%>"></i></a>
+                                    <a href="/password/delete/<%=id%>"><i class="deletePassword far fa-trash-alt fa-lg icon-red" id="deletePassword" data-id="<%= id%>"></i></a>
                                 </td>
                             </tr>
                             <% } %>
